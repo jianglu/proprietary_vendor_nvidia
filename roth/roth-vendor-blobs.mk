@@ -39,12 +39,12 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/hw/keystore.tegra.so:system/lib/hw/keystore.tegra.so \
     vendor/nvidia/roth/proprietary/lib/hw/sensors.roth.so:system/lib/hw/sensors.roth.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/ts.default.so:system/vendor/lib/hw/ts.default.so \
-    vendor/nvidia/roth/proprietary/lib/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
+    vendor/nvidia/roth/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
     vendor/nvidia/roth/proprietary/lib/libinvensense_hal.so:system/lib/libinvensense_hal.so \
     vendor/nvidia/roth/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/nvidia/roth/proprietary/lib/libmplmpu.so:system/lib/libmplmpu.so \
     vendor/nvidia/roth/proprietary/lib/libnvoice.so:system/lib/libnvoice.so \
-    vendor/nvidia/roth/proprietary/lib/liboemcrypto.so:system/lib/liboemcrypto.so \
+    vendor/nvidia/roth/proprietary/lib/vendor/liboemcrypto.so:system/vendor/lib/liboemcrypto.so \
     vendor/nvidia/roth/proprietary/lib/librm31080.so:system/lib/librm31080.so \
     vendor/nvidia/roth/proprietary/vendor/lib/librm_ts_service.so:system/vendor/lib/librm_ts_service.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.base.so:system/lib/libsensors.base.so \
