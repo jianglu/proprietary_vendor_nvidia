@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/nvidia/roth/proprietary/lib/libmplmpu.so:system/lib/libmplmpu.so \
     vendor/nvidia/roth/proprietary/lib/libnvoice.so:system/lib/libnvoice.so \
-    vendor/nvidia/roth/proprietary/lib/vendor/liboemcrypto.so:system/vendor/lib/liboemcrypto.so \
+    vendor/nvidia/roth/proprietary/vendor/lib/liboemcrypto.so:system/vendor/lib/liboemcrypto.so \
     vendor/nvidia/roth/proprietary/lib/librm31080.so:system/lib/librm31080.so \
     vendor/nvidia/roth/proprietary/vendor/lib/librm_ts_service.so:system/vendor/lib/librm_ts_service.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.base.so:system/lib/libsensors.base.so \
