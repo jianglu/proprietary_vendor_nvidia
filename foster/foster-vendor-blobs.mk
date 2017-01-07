@@ -92,6 +92,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/memtrack.tegra.so:system/vendor/lib64/hw/memtrack.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/pbc.tegra.so:system/vendor/lib64/hw/pbc.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/vulkan.tegra.so:system/vendor/lib64/hw/vulkan.tegra.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libaudiopolicymanager.so:system/vendor/lib64/libaudiopolicymanager.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libaudiopolicymanagerdefault.so:system/vendor/lib64/libaudiopolicymanagerdefault.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libclcore_nvidia.bc:system/vendor/lib64/libclcore_nvidia.bc \
     vendor/nvidia/foster/proprietary/vendor/lib64/libcuda.so:system/vendor/lib64/libcuda.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libglcore.so:system/vendor/lib64/libglcore.so \
@@ -146,7 +148,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/memtrack.tegra.so:system/vendor/lib/hw/memtrack.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/vulkan.tegra.so:system/vendor/lib/hw/vulkan.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/pbc.tegra.so:system/vendor/lib/hw/pbc.tegra.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libbt-vendor.so:system/vendor/lib/libbt-vendor.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libaudiopolicymanager.so:system/vendor/lib/libaudiopolicymanager.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libaudiopolicymanagerdefault.so:system/vendor/lib/libaudiopolicymanagerdefault.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libclcore_nvidia.bc:system/vendor/lib/libclcore_nvidia.bc \
     vendor/nvidia/foster/proprietary/vendor/lib/libcuda.so:system/vendor/lib/libcuda.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
