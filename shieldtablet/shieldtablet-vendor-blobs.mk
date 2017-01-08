@@ -86,6 +86,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/memtrack.tegra.so:system/vendor/lib/hw/memtrack.tegra.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/ts.default.so:system/vendor/lib/hw/ts.default.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/vulkan.tegra.so:system/vendor/lib/hw/vulkan.tegra.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libaudiopolicymanager.so:system/vendor/lib/libaudiopolicymanager.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libaudiopolicymanagerdefault.so:system/vendor/lib/libaudiopolicymanagerdefault.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libclcore_nvidia.bc:system/vendor/lib/libclcore_nvidia.bc \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libcuda.so:system/vendor/lib/libcuda.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
