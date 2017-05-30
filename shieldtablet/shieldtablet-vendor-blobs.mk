@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/etc/hdcpsrm/hdcp2xtest.srm:system/etc/hdcpsrm/hdcp2xtest.srm \
     vendor/nvidia/shieldtablet/proprietary/etc/nvram_43241.txt:system/etc/nvram_43241.txt \
     vendor/nvidia/shieldtablet/proprietary/lib/hw/gps.brcm.so:system/lib/hw/gps.brcm.so \
-    vendor/nvidia/shieldtablet/proprietary/lib/hw/sensors.default.mpl520.nvs.so:system/lib/hw/sensors.default.mpl520.nvs.so \
+    vendor/nvidia/shieldtablet/proprietary/lib/hw/sensors.default.api_v1.3.mpl520.nvs.so:system/lib/hw/sensors.default.api_v1.3.mpl520.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libmplmpu.so:system/lib/libmplmpu.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libopencv24_tegra.so:system/lib/libopencv24_tegra.so \
@@ -58,7 +58,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/lib/libsensors.hal.nvs.so:system/lib/libsensors.hal.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libsensors.prefusion.mpl520.nvs.so:system/lib/libsensors.prefusion.mpl520.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libtbb.so:system/lib/libtbb.so \
-    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libvulkan.so:system/vendor/lib/libvulkan.so \
     vendor/nvidia/shieldtablet/proprietary/lib/nvcms/device.cfg:system/lib/nvcms/device.cfg \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/FinalTestThresholdManage.ini:system/vendor/bin/FinalTestThresholdManage.ini \
@@ -69,11 +68,11 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/rm_test:system/vendor/bin/rm_test \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/rm_ts_server:system/vendor/bin/rm_ts_server \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/ss_status:system/vendor/bin/ss_status \
-    vendor/nvidia/shieldtablet/proprietary/vendor/bin/ss_status.sh:system/vendor/bin/ss_status.sh \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/run_ss_status.sh:system/vendor/bin/run_ss_status.sh \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tegrastats:system/vendor/bin/tegrastats \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tlk_daemon:system/vendor/bin/tlk_daemon \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tsechdcp_test:system/vendor/bin/tsechdcp_test \
-    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/fw_bcmdhd.bin:system/vendor/firmware/fw_bcmdhd.bin \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/egl/libEGL_tegra.so:system/vendor/lib/egl/libEGL_tegra.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/egl/libGLESv1_CM_tegra.so:system/vendor/lib/egl/libGLESv1_CM_tegra.so \
@@ -92,7 +91,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libglcore.so:system/vendor/lib/libglcore.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_boot.so:system/vendor/lib/libgov_boot.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_camera.so:system/vendor/lib/libgov_camera.so \
-    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_combinator.so:system/vendor/lib/libgov_combinator.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_force.so:system/vendor/lib/libgov_force.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_generic.so:system/vendor/lib/libgov_generic.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_gpucompute.so:system/vendor/lib/libgov_gpucompute.so \
@@ -151,7 +149,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvmm_writer.so:system/vendor/lib/libnvmm_writer.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvodm_imager.so:system/vendor/lib/libnvodm_imager.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvoice.so:system/vendor/lib/libnvoice.so \
-    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvoicefx.so:system/vendor/lib/libnvoicefx.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvomxadaptor.so:system/vendor/lib/libnvomxadaptor.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvomxilclient.so:system/vendor/lib/libnvomxilclient.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvomx.so:system/vendor/lib/libnvomx.so \

@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# Copyright (c) 2012-2015, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2012-2016, NVIDIA CORPORATION.  All rights reserved.
 #
 # NVIDIA CORPORATION and its licensors retain all intellectual property
 # and proprietary rights in and to this software, related documentation
@@ -24,8 +24,6 @@ TI=0x0097
 MRVL=0x02df
 automotive_device=n
 hardware= ($(getprop ro.hardware))
-wifianttuning=`cat /proc/device-tree/wifi-antenna-tuning/status`
-wifituningsku=`cat /proc/device-tree/wifi-tuning/sku`
 
 # get wifi country code from factory partition
 wifi_country_code=
@@ -113,15 +111,7 @@ fi
 
 if [ "$(getprop ro.auto.device)" = "true" ]; then
 	/system/bin/log -t "wifiloader" -p i "automotive device is detected"
-	if [ -e /system/lib/modules/cfg80211.ko ]; then
-		insmod /system/lib/modules/cfg80211.ko
-	fi
 	automotive_device=y
-else
-	/system/bin/log -t "wifiloader" -p i "mobile device is detected"
-	if [ -e /system/lib/modules/cfg80211.ko ]; then
-		insmod /system/lib/modules/cfg80211.ko
-	fi
 fi
 
 #Find device and set configurations
@@ -156,84 +146,10 @@ if [ "$vendor" = "$BRCM" ]; then
 
 	/system/bin/log -t "wifiloader" -p i  "chip=$chip hardware=$hardware wifi_country_code=$wifi_country_code"
 
-	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd.bin ]; then
-		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd.bin soft link"
-		/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd.bin
+	if [ -e /data/misc/wifi/firmware ];then
+		rm -rf /data/misc/wifi/firmware
 	fi
 
-	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin ]; then
-		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd_apsta.bin soft link"
-		/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin
-	fi
-
-	if [ ! -e /data/misc/wifi/firmware/nvram.txt ]; then
-		/system/bin/log -t "wifiloader" -p i  "create nvram soft link"
-		if [ ! -z $wifituningsku ]; then
-			/system/bin/log -t "wifiloader" -p i  "SKU specific nvram"
-			/system/bin/ln -s /system/etc/nvram_${wifituningsku}.txt /data/misc/wifi/firmware/nvram.txt
-		elif [ $chip = "43341" ]; then
-			/system/bin/log -t "wifiloader" -p i  "nvram.txt soft link for $chip"
-			/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd_a0.bin /data/misc/wifi/firmware/fw_bcmdhd_a0.bin
-			/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd_a0.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta_a0.bin
-			/system/bin/ln -s /system/etc/nvram_rev2.txt /data/misc/wifi/firmware/nvram.txt
-			/system/bin/ln -s /system/etc/nvram_rev3.txt /data/misc/wifi/firmware/nvram_43341_rev3.txt
-			/system/bin/ln -s /system/etc/nvram_rev4.txt /data/misc/wifi/firmware/nvram_43341_rev4.txt
-		elif [ $chip = "4354" ]; then
-			/system/bin/log -t "wifiloader" -p i  "nvram.txt soft link for $chip"
-			if [[ "$hardware" == *"loki_e"* ]]; then
-				/system/bin/log -t "wifiloader" -p i  "loki_e found"
-				if [ $wifianttuning == "disabled" ]; then
-					/system/bin/ln -s /system/etc/nvram_loki_e_$chip.txt /data/misc/wifi/firmware/nvram.txt
-				else
-					/system/bin/log -t "wifiloader" -p i  "Antenna Tuned Wi-Fi"
-					/system/bin/ln -s /system/etc/nvram_loki_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
-				fi
-			elif [[ "$hardware" == *"foster_e"* ]]; then
-				/system/bin/log -t "wifiloader" -p i  "foster_e found"
-				if [ $wifianttuning == "disabled" ]; then
-					/system/bin/ln -s /system/etc/nvram_foster_e_$chip.txt /data/misc/wifi/firmware/nvram.txt
-				else
-					/system/bin/log -t "wifiloader" -p i  "Antenna Tuned Wi-Fi"
-					/system/bin/ln -s /system/etc/nvram_foster_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
-				fi
-			elif [[ "$hardware" == *"hawkeye"* || "$hardware" == *"he2290"* ]]; then
-				/system/bin/log -t "wifiloader" -p i  "Found Hawkeye, load Hawkeye antenna tuned NVRAM"
-				/system/bin/ln -s /system/etc/nvram_hawkeye_$chip.txt /data/misc/wifi/firmware/nvram.txt
-			elif [[ "$hardware" == *"green-arrow"* || "$hardware" == *"ga2267"* ]]; then
-				/system/bin/log -t "wifiloader" -p i  "Found Green Arrow, so loading LOKI antenna tuned NVRAM file"
-				/system/bin/ln -s /system/etc/nvram_loki_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
-			elif [[ "$hardware" == *"jetson_cv"* ]]; then
-				/system/bin/log -t "wifiloader" -p i  "Found jetson_cv, load jetson_cv tuned NVRAM"
-				/system/bin/ln -s /system/etc/nvram_jetsonE_cv_$chip.txt /data/misc/wifi/firmware/nvram.txt
-			else
-				/system/bin/log -t "wifiloader" -p i  "Default nvram"
-				/system/bin/ln -s /system/etc/nvram_$chip.txt /data/misc/wifi/firmware/nvram.txt
-			fi
-		else
-			/system/bin/log -t "wifiloader" -p i  "set default nvram.txt soft link for $chip"
-			/system/bin/ln -s /system/etc/nvram_$chip.txt /data/misc/wifi/firmware/nvram.txt
-		fi
-	fi
-
-	if [ $automotive_device = y ]; then
-		/system/bin/log -t "wifiloader" -p i "load bcmdhd module for automotive device"
-		if [ -e /system/lib/modules/bcmdhd.ko ]; then
-			insmod /system/lib/modules/bcmdhd.ko
-			/system/bin/ln -s /sys/module/bcmdhd/parameters/firmware_path /data/misc/wifi/firmware/firmware_path
-		else
-			/system/bin/log -t "wifiloader" -p i "KO not found, compiled part of kernel"
-			/system/bin/ln -s /sys/module/bcmdhd/parameters/firmware_path /data/misc/wifi/firmware/firmware_path
-		fi
-	else
-		/system/bin/log -t "wifiloader" -p i "load bcmdhd module for mobile device"
-		if [ -e /system/lib/modules/bcmdhd.ko ]; then
-			insmod /system/lib/modules/bcmdhd.ko
-			/system/bin/ln -s /sys/module/bcmdhd/parameters/firmware_path /data/misc/wifi/firmware/firmware_path
-		else
-			/system/bin/log -t "wifiloader" -p i "KO not found, compiled part of kernel"
-			/system/bin/ln -s /sys/module/bcmdhd/parameters/firmware_path /data/misc/wifi/firmware/firmware_path
-		fi
-	fi
 #marvel comms chip
 elif [ $vendor_device = "$MRVL""_0x9129" ]; then
 	/system/bin/log -t "wifiloader" -p i  "MRVL8797 chip identified"
@@ -343,9 +259,11 @@ if [ "$vendor" = "$BRCM" ]; then
 	/system/bin/ln -s /sys/module/bcmdhd/parameters/firmware_path /data/misc/wifi/firmware/firmware_path
 fi
 
-#increase the wmem default and wmem max size
-echo 262144 > /proc/sys/net/core/wmem_default
-echo 262144 > /proc/sys/net/core/wmem_max
+#bluetooth_log
+touch /data/misc/bluedroid_log/data.txt
+chown bluetooth:system /data/misc/bluedroid_log/data.txt
+touch /data/misc/bluedroid_log/log.txt
+chown bluetooth:system /data/misc/bluedroid_log/log.txt
 
 datafile="/data/misc/wifi/wifi_scan_config.conf"
 etcfile="/etc/wifi/wifi_scan_config.conf"
