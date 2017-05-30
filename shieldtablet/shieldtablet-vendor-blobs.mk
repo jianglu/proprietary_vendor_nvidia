@@ -107,6 +107,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcamerahdr_v3.so:system/vendor/lib/libnvcamerahdr_v3.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcam_imageencoder.so:system/vendor/lib/libnvcam_imageencoder.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcameranrr.so:system/vendor/lib/libnvcameranrr.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcameratools.so:system/vendor/lib/libnvcameratools.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcamerautils.so:system/vendor/lib/libnvcamerautils.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcamlog.so:system/vendor/lib/libnvcamlog.so \
@@ -115,11 +116,13 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcms.so:system/vendor/lib/libnvcms.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcontrol_jni.so:system/vendor/lib/libnvcontrol_jni.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcpl.so:system/vendor/lib/libnvcpl.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcudautils.so:system/vendor/lib/libnvcudautils.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvddk_2d_v2.so:system/vendor/lib/libnvddk_2d_v2.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvddk_vic.so:system/vendor/lib/libnvddk_vic.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvflv.so:system/vendor/lib/libnvflv.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvfnet.so:system/vendor/lib/libnvfnet.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvfnetstorehdfx.so:system/vendor/lib/libnvfnetstorehdfx.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvfnetstoredefog.so:system/vendor/lib/libnvfnetstoredefog.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvgamecaster.so:system/vendor/lib/libnvgamecaster.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvglsi.so:system/vendor/lib/libnvglsi.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvgr.so:system/vendor/lib/libnvgr.so \
